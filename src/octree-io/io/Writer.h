@@ -7,15 +7,15 @@
 
 #include <ostream>
 
-#include "../structure/Octree.h"
+#include "../structure/kNTree.h"
 
-namespace octree_io {
+namespace kn_tree_io {
     /**
      * Writes an compressed Octree to an output stream.
      *
      * @param ostream output stream to write the octree to.
      * @param octree the octree to compress and write.
      */
-    void write(std::ostream &ostream, octree_io::Octree octree);
+    void write(std::ostream &ostream, kn_tree_io::kN_tree octree);
 }
 #endif //OCTREE_IO_WRITER_H

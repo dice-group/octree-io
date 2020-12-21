@@ -4,6 +4,6 @@
 
 #include "Writer.h"
 
-void octree_io::write(std::ostream &ostream, octree_io::Octree octree){
+void kn_tree_io::write(std::ostream &ostream, kn_tree_io::kN_tree octree){
     //TODO save treeNode code from k2
 }

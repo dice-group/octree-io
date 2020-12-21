@@ -4,36 +4,36 @@
 
 #include "Reader.h"
 
-void octree_io::read(std::istream& istream, octree_io::Octree &octree, size_t len){
+void kn_tree_io::read(std::istream& istream, kn_tree_io::kN_tree &octree, size_t len){
     if(len>0){
-        octree_io::ByteBuffer buffer{&istream, len, len};
+        kn_tree_io::ByteBuffer buffer{&istream, len, len};
         buffered_read(istream, octree, buffer);
     }else{
         unbuffered_read(istream, octree);
     }
 }
 
-void octree_io::unbuffered_read(std::istream& istream, octree_io::Octree &octree) {
+void kn_tree_io::unbuffered_read(std::istream& istream, kn_tree_io::kN_tree &octree) {
     //TODO steal algorithm from k2
 }
 
-void octree_io::buffered_read(std::istream& istream, octree_io::Octree &octree, octree_io::ByteBuffer buffer){
+void kn_tree_io::buffered_read(std::istream& istream, kn_tree_io::kN_tree &octree, kn_tree_io::ByteBuffer buffer){
     //TODO steal algorithm from k2
 }
 
-void octree_io::read(std::istream& istream, std::vector<octree_io::Octree> &octrees, size_t len){
+void kn_tree_io::read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees, size_t len){
     if(len>0){
-        octree_io::ByteBuffer buffer{&istream, len, len};
+        kn_tree_io::ByteBuffer buffer{&istream, len, len};
         buffered_read(istream, octrees, buffer);
     }else{
         unbuffered_read(istream, octrees);
     }
 }
 
-void octree_io::unbuffered_read(std::istream& istream, std::vector<octree_io::Octree> &octrees) {
+void kn_tree_io::unbuffered_read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees) {
     //TODO steal algorithm from k2
 }
 
-void octree_io::buffered_read(std::istream& istream, std::vector<octree_io::Octree> &octrees, octree_io::ByteBuffer buffer){
+void kn_tree_io::buffered_read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees, kn_tree_io::ByteBuffer buffer){
     //TODO steal algorithm from k2
 }

@@ -7,10 +7,10 @@
 
 #include <istream>
 
-#include "../structure/Octree.h"
+#include "../structure/kNTree.h"
 #include "ByteBuffer.h"
 
-namespace octree_io{
+namespace kn_tree_io{
 
     /**
      * Reads an octree from an input stream and save the tree into octree.
@@ -22,7 +22,7 @@ namespace octree_io{
      * @param octree The structure to save the octree into
      * @param len size of bytes the octree represents
      */
-    void read(std::istream& istream, octree_io::Octree &octree, size_t len=0);
+    void read(std::istream& istream, kn_tree_io::kN_tree &octree, size_t len=0);
 
     /**
      * Reads an octree from an input stream and save the tree into octree using a byte buffer
@@ -31,7 +31,7 @@ namespace octree_io{
      * @param octree The structure to save the octree into
      * @param len size of bytes the octree represents
      */
-    void buffered_read(std::istream& istream, octree_io::Octree &octree, octree_io::ByteBuffer buffer);
+    void buffered_read(std::istream& istream, kn_tree_io::kN_tree &octree, kn_tree_io::ByteBuffer buffer);
 
     /**
      * Reads an octree from an input stream and save the tree into octree without buffering.
@@ -39,7 +39,7 @@ namespace octree_io{
      * @param istream The input stream to read from
      * @param octree The structure to save the octree into
      */
-    void unbuffered_read(std::istream& istream, octree_io::Octree &octree);
+    void unbuffered_read(std::istream& istream, kn_tree_io::kN_tree &octree);
 
     /**
      * Read multiple octress from input stream.
@@ -51,7 +51,7 @@ namespace octree_io{
      * @param octrees The vector to save the octrees into
      * @param len size of bytes the octree represents
      */
-    void read(std::istream& istream, std::vector<octree_io::Octree> &octrees, size_t len=0);
+    void read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees, size_t len=0);
 
     /**
      * Read multiple octress from input stream using a byte buffer.
@@ -60,7 +60,7 @@ namespace octree_io{
      * @param octrees The vector to save the octrees into
      * @param len size of bytes the octree represents
      */
-    void buffered_read(std::istream& istream, std::vector<octree_io::Octree> &octrees, octree_io::ByteBuffer buffer);
+    void buffered_read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees, kn_tree_io::ByteBuffer buffer);
 
     /**
      * Read multiple octress from input stream without buffering.
@@ -69,7 +69,7 @@ namespace octree_io{
      * @param istream The input stream to read from
      * @param octrees The vector to save the octrees into
      */
-    void unbuffered_read(std::istream& istream, std::vector<octree_io::Octree> &octrees);
+    void unbuffered_read(std::istream& istream, std::vector<kn_tree_io::kN_tree> &octrees);
 }
 
 #endif //OCTREE_IO_READER_H

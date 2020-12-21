@@ -9,7 +9,7 @@
 #include <cstddef>
 #include <vector>
 
-namespace octree_io {
+namespace kn_tree_io {
 
     /**
      * ByteBuffer to make read a bit faster.
