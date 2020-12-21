@@ -55,7 +55,7 @@ int main(){
         kn_tree_io::kn_tree tree{dim};
 
         std::istream istream = ...
-        kn_tree_io::read(istream, tree, dim);
+        kn_tree_io::read(istream, tree);
 	
 	std::vector<std::vector<size_t>> vectors{};	
 	for(std::vector<size_t> &point : tree.get_points()){
