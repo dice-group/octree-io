@@ -2,9 +2,9 @@
 // Created by minimal on 12/21/20.
 //
 
-#include "ByteBuffer.h"
+#include "byte_buffer.h"
 
-kn_tree_io::ByteBuffer::ByteBuffer(std::istream *stream, size_t length, size_t initalSize){
+kn_tree_io::byte_buffer::byte_buffer(std::istream *stream, size_t length, size_t initalSize){
     this->pointer=0;
     this->bufferSize = initalSize;
     this->buffer = std::vector<u_char>(initalSize);
@@ -13,7 +13,7 @@ kn_tree_io::ByteBuffer::ByteBuffer(std::istream *stream, size_t length, size_t i
     fillBuffer();
 }
 
-void kn_tree_io::ByteBuffer::fillBuffer() {
+void kn_tree_io::byte_buffer::fillBuffer() {
     size_t remaining = len-count;
     if(this->bufferSize>remaining){
         this->istream->read((char *)&buffer[0], remaining);
@@ -24,7 +24,7 @@ void kn_tree_io::ByteBuffer::fillBuffer() {
 }
 
 
-void kn_tree_io::ByteBuffer::next(size_t length, u_char *putIn){
+void kn_tree_io::byte_buffer::next(size_t length, u_char *putIn){
     for(size_t i=0; i<length;i++){
         if(this->pointer>=this->bufferSize){
             fillBuffer();
@@ -35,6 +35,9 @@ void kn_tree_io::ByteBuffer::next(size_t length, u_char *putIn){
     }
 }
 
-bool kn_tree_io::ByteBuffer::eos(){
+bool kn_tree_io::byte_buffer::eos(){
+    if(len==0){
+        return false;
+    }
     return this->len<=this->count;
 }

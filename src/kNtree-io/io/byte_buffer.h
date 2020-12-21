@@ -2,8 +2,8 @@
 // Created by minimal on 12/21/20.
 //
 
-#ifndef OCTREE_IO_BYTEBUFFER_H
-#define OCTREE_IO_BYTEBUFFER_H
+#ifndef OCTREE_IO_BYTE_BUFFER_H
+#define OCTREE_IO_BYTE_BUFFER_H
 
 #include <istream>
 #include <cstddef>
@@ -12,9 +12,9 @@
 namespace kn_tree_io {
 
     /**
-     * ByteBuffer to make read a bit faster.
+     * byte_buffer to make read a bit faster.
      */
-    class ByteBuffer {
+    class byte_buffer {
     public:
         /**
          * Constructor
@@ -23,7 +23,7 @@ namespace kn_tree_io {
          * @param len amount of bytes to read from stream in total
          * @param initalSize buffer size
          */
-        explicit ByteBuffer(std::istream *istream, size_t len, size_t initalSize = 1024);
+        explicit byte_buffer(std::istream *istream, size_t len, size_t initalSize = 1024);
 
         /**
          * gets the next length bytes and save them in putIn
@@ -36,6 +36,9 @@ namespace kn_tree_io {
         /**
          * End of Stream.
          * Be aware that this does not necc. mean that the stream has ended, but merely that the amount of bytes to read are absolved.
+         *
+         * If len was set to 0 always returns false.
+         *
          * @return true if amount of bytes were read and consumed using next, false otherwise.
          */
         bool eos();
@@ -53,4 +56,4 @@ namespace kn_tree_io {
 
 }
 
-#endif //OCTREE_IO_BYTEBUFFER_H
+#endif //OCTREE_IO_BYTE_BUFFER_H

@@ -7,7 +7,7 @@
 
 #include <ostream>
 
-#include "../structure/kNTree.h"
+#include "../structure/kn_tree.h"
 
 namespace kn_tree_io {
     /**
@@ -16,6 +16,6 @@ namespace kn_tree_io {
      * @param ostream output stream to write the octree to.
      * @param octree the octree to compress and write.
      */
-    void write(std::ostream &ostream, kn_tree_io::kN_tree octree);
+    void write(std::ostream &ostream, kn_tree_io::kn_tree octree);
 }
 #endif //OCTREE_IO_WRITER_H

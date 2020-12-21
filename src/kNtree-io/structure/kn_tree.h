@@ -2,20 +2,26 @@
 // Created by minimal on 12/21/20.
 //
 
-#ifndef OCTREE_IO_KNTREE_H
-#define OCTREE_IO_KNTREE_H
+#ifndef OCTREE_IO_KN_TREE_H
+#define OCTREE_IO_KN_TREE_H
 
 #include <cstddef>
 #include <vector>
-#include "Point.h"
 
 namespace kn_tree_io {
 
     /**
     * Octree structure
     */
-    class kN_tree{
+    class kn_tree{
     public:
+
+        /**
+         * Creates a kN-tree where each Point represented in the tree is of dimension n
+         *
+         * @param n the dimension of the points represented by the tree
+         */
+        kn_tree(size_t n);
         /**
          * Adds one n-dim point to the octree.
          * @param point
@@ -44,9 +50,17 @@ namespace kn_tree_io {
          * @return all points in octree
          */
         std::vector<std::vector<size_t>> * getPoints();
+
+        /**
+         * Returns the amount of dimensions of a point represented by the tree.
+         * @return dimension, kN
+         */
+        u_char getN();
+
     private:
         std::vector<std::vector<size_t>> points{};
+        size_t dim;
     };
 }
 
-#endif //OCTREE_IO_KNTREE_H
+#endif //OCTREE_IO_KN_TREE_H

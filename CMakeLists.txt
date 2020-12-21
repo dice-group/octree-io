@@ -3,4 +3,4 @@ project(octree_io)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(octree_io SHARED src/octree-io/structure/kNTree.cpp src/octree-io/structure/kNTree.h src/octree-io/structure/Point.cpp src/octree-io/structure/Point.h src/octree-io/io/Writer.cpp src/octree-io/io/Writer.h src/octree-io/io/Reader.cpp src/octree-io/io/Reader.h src/octree-io/io/ByteBuffer.cpp src/octree-io/io/ByteBuffer.h)
+add_library(octree_io SHARED src/kNtree-io/structure/kn_tree.cpp src/kNtree-io/structure/kn_tree.h src/kNtree-io/io/writer.cpp src/kNtree-io/io/writer.h src/kNtree-io/io/reader.cpp src/kNtree-io/io/reader.h src/kNtree-io/io/byte_buffer.cpp src/kNtree-io/io/byte_buffer.h src/kNtree-io/structure/path.cpp src/kNtree-io/structure/path.h)
