@@ -30,16 +30,15 @@ void kn_tree_io::read(kn_tree_io::byte_buffer &buffer, kn_tree_io::path& p, u_ch
 }
 
 void kn_tree_io::readShift(kn_tree_io::byte_buffer &buffer, kn_tree_io::path& p, u_char h, u_char j){
-    //TODO n=1
+    u_char k = 0
     if (p.hasLast()) {
-        //TODO j += p.addLast(j);
-        p.addLast(j);
-        j++;
+        k = p.addLast(j);
+        j+=k;
+
     }
     u_char b[1];
 
-    //TODO i+=2 if n=2, +=4 if n=1
-    for (u_char i = j; i < h; i += 2) {
+    for (u_char i = j; i < h; i += k*2) {
         buffer.next(sizeof(u_char), b);
         p.add(i, &b[0]);
     }

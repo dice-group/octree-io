@@ -25,7 +25,7 @@ namespace kn_tree_io {
 
         void add(u_int32_t i, u_char *newpath);
 
-        void addLast(u_int32_t i);
+        size_t addLast(u_int32_t i);
 
     private:
         std::vector<std::vector<u_char>> paths;
