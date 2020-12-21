@@ -5,15 +5,15 @@
 #include "kn_tree.h"
 
 
-kn_tree_io::kn_tree::kn_tree(size_t n) {
+octree_io::kn_tree::kn_tree(size_t n) {
     this->dim=n;
 }
 
-std::vector<std::vector<size_t>> * kn_tree_io::kn_tree::getPoints() {
+std::vector<std::vector<size_t>> * octree_io::kn_tree::getPoints() {
     return &this->points;
 }
 
-std::vector<size_t> *kn_tree_io::kn_tree::get(std::vector<size_t> vec){
+std::vector<size_t> *octree_io::kn_tree::get(std::vector<size_t> vec){
     for(std::vector<size_t> &p : points){
         bool is=true;
         for(size_t i=0;i<vec.size();i++) {
@@ -29,14 +29,14 @@ std::vector<size_t> *kn_tree_io::kn_tree::get(std::vector<size_t> vec){
     return nullptr;
 }
 
-std::vector<size_t> *kn_tree_io::kn_tree::get(size_t i){
+std::vector<size_t> *octree_io::kn_tree::get(size_t i){
     return &points[i];
 }
 
-void kn_tree_io::kn_tree::add(std::vector<size_t> vec) {
+void octree_io::kn_tree::add(std::vector<size_t> vec) {
     points.push_back(vec);
 }
 
-u_char kn_tree_io::kn_tree::getN() {
+u_char octree_io::kn_tree::getN() {
     return dim;
 }

@@ -8,7 +8,8 @@
 #include <vector>
 #include <cstddef>
 
-namespace kn_tree_io {
+namespace oct
+ree_io {
     class path {
     public:
         path(u_int32_t h, size_t n);
