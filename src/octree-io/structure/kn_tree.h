@@ -20,8 +20,9 @@ namespace octree_io {
          * Creates a kN-tree where each Point represented in the tree is of dimension n
          *
          * @param n the dimension of the points represented by the tree
+         * @param noOfPoints - will reserve space initially thus optimizing time (default: 0)
          */
-        kn_tree(size_t n);
+        kn_tree(size_t n, size_t noOfPoints=0);
         /**
          * Adds one n-dim point to the octree.
          * @param point
@@ -60,6 +61,7 @@ namespace octree_io {
     private:
         std::vector<std::vector<size_t>> points{};
         size_t dim;
+
     };
 }
 

@@ -5,8 +5,11 @@
 #include "kn_tree.h"
 
 
-octree_io::kn_tree::kn_tree(size_t n) {
+octree_io::kn_tree::kn_tree(size_t n, size_t noOfPoints) {
     this->dim=n;
+    if(noOfPoints!=0) {
+        this->points.reserve(noOfPoints);
+    }
 }
 
 std::vector<std::vector<size_t>> * octree_io::kn_tree::getPoints() {
