@@ -9,7 +9,7 @@ Serializing a set of 3-dimensional vectors to an octree (k3-tree)
 ```C++
 
 #include <vector>
-#include <istream>
+#include <ostream>
 
 #include "octree_io/io/writer.h"
 #include "octree_io/structure/kn_tree.h"
@@ -31,7 +31,7 @@ int main(){
 		tree.add(point);
 	}
 
-	std::istream istream = ...
+	std::ostream ostream = ...
 	octree_io::write(istream, tree);
 }
 
@@ -42,7 +42,7 @@ Deserializing of an octree (k3-tree).
 ```C++
 
 #include <vector>
-#include <ostream>
+#include <istream>
 
 #include "octree_io/io/reader.h"
 #include "octree_io/structure/kn_tree.h"
@@ -54,7 +54,7 @@ int main(){
         //Creates an Octree (3-dimensional)
         octree_io::kn_tree tree{dim};
 
-        std::ostream ostream = ...
+        std::istream istream = ...
         octree_io::read(istream, tree);
 	
 	std::vector<std::vector<size_t>> vectors{};	
